@@ -16,14 +16,16 @@ class FriendDetailViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var pictureImageView: UIImageView!
     
-    var friendName = ""
+    var friend = Friend()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //make the name label whatever is in that variable
-        self.nameLabel.text = self.friendName
+        //make the attributes to the labels
+        self.nameLabel.text = self.friend.name
+        self.phoneLabel.text = self.friend.phoneNumber
+        self.birthdayLabel.text = self.friend.birthday
     }
 
 }

@@ -15,15 +15,53 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
     
     //array of friends to pull from
-    var friends = ["Alec", "Hanna", "Lindsay", "Melissa"]
+    var friends = [Friend]()
     
+    //when the screen loads, do this stuff
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        //do this function right away
+        createFriends()
         
         //where is the table view looking for the rows and cells? (itself)
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    }
+    
+    //create friend objects
+    func createFriends() {
+        //made a friend named alec
+        let ramsey = Friend()
+        
+        //assigned all the properties
+        ramsey.name = "Ramsey"
+        ramsey.phoneNumber = "509.496.6614"
+        ramsey.birthday = "Principal"
+        
+        //added it to the array
+        self.friends.append(ramsey)
+        
+        //make another friend
+        let jeremy = Friend()
+        jeremy.name = "Jeremy"
+        jeremy.phoneNumber = "208.449.3389"
+        jeremy.birthday = "Media Supervisor"
+        self.friends.append(jeremy)
+        
+        //make another friend
+        let hanna = Friend()
+        hanna.name = "Hanna"
+        hanna.phoneNumber = "509.688.9983"
+        hanna.birthday = "Project Manager"
+        self.friends.append(hanna)
+        
+        //make another friend
+        let melissa = Friend()
+        melissa.name = "Melissa"
+        melissa.phoneNumber = "509.220.5681"
+        melissa.birthday = "Graphic Designer"
+        self.friends.append(melissa)
     }
     
     //1. how many rows?
@@ -41,7 +79,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         let friend = self.friends[indexPath.row]
         
         //make the cell name the friend name
-        cell.textLabel!.text = friend
+        cell.textLabel!.text = friend.name
         
         return cell
     }
@@ -66,7 +104,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         let detailVC = segue.destination as! FriendDetailViewController
         
         //make the label in the next screen whatever was passed
-        detailVC.friendName = sender as! String
+        detailVC.friend = sender as! Friend
     }
 
 }
