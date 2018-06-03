@@ -52,8 +52,21 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         //deselect the row after clicking it (so it doesn't stay grey)
         tableView.deselectRow(at: indexPath, animated: true)
         
-        //perform the segue I made in the storyboard
-        self.performSegue(withIdentifier: "detailSegue", sender: nil)
+        //pass the friend name into this variable
+        let friend = self.friends[indexPath.row]
+        
+        //perform the segue I made in the storyboard & pass the friend name
+        self.performSegue(withIdentifier: "detailSegue", sender: friend)
+    }
+    
+    //pass info to the detail screen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //gives access to change the detail screen's UI elements
+        let detailVC = segue.destination as! FriendDetailViewController
+        
+        //make the label in the next screen whatever was passed
+        detailVC.friendName = sender as! String
     }
 
 }
