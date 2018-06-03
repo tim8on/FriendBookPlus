@@ -38,6 +38,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         ramsey.name = "Ramsey"
         ramsey.phoneNumber = "509.496.6614"
         ramsey.birthday = "Principal"
+        ramsey.picture = UIImage(named: "ramsey")!
         
         //added it to the array
         self.friends.append(ramsey)
@@ -47,6 +48,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         jeremy.name = "Jeremy"
         jeremy.phoneNumber = "208.449.3389"
         jeremy.birthday = "Media Supervisor"
+        jeremy.picture = UIImage(named: "jeremy")!
         self.friends.append(jeremy)
         
         //make another friend
@@ -54,6 +56,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         hanna.name = "Hanna"
         hanna.phoneNumber = "509.688.9983"
         hanna.birthday = "Project Manager"
+        hanna.picture = UIImage(named: "hanna")!
         self.friends.append(hanna)
         
         //make another friend
@@ -61,6 +64,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         melissa.name = "Melissa"
         melissa.phoneNumber = "509.220.5681"
         melissa.birthday = "Graphic Designer"
+        melissa.picture = UIImage(named: "melissa")!
         self.friends.append(melissa)
     }
     

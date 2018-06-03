@@ -26,6 +26,10 @@ class FriendDetailViewController: UIViewController {
         self.nameLabel.text = self.friend.name
         self.phoneLabel.text = self.friend.phoneNumber
         self.birthdayLabel.text = self.friend.birthday
+        self.pictureImageView.image = self.friend.picture
+        
+        //fix the stretch
+        self.pictureImageView.contentMode = UIViewContentMode.scaleAspectFit
     }
 
 }
