@@ -14,6 +14,9 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     //add the table view from UI
     @IBOutlet weak var tableView: UITableView!
     
+    //array of friends to pull from
+    var friends = ["Alec", "Hanna", "Lindsay", "Melissa"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,14 +28,32 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     
     //1. how many rows?
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        //however many names there are in the friends array
+        return self.friends.count
     }
     
     //2. what's in each row/cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //make a variable to put stuff into
         let cell = UITableViewCell()
-        cell.textLabel!.text = "aye"
+        
+        //make a variable to pass the friend into
+        let friend = self.friends[indexPath.row]
+        
+        //make the cell name the friend name
+        cell.textLabel!.text = friend
+        
         return cell
+    }
+    
+    //when cell is tapped, move to next screen
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //deselect the row after clicking it (so it doesn't stay grey)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //perform the segue I made in the storyboard
+        self.performSegue(withIdentifier: "detailSegue", sender: nil)
     }
 
 }

@@ -51,11 +51,27 @@
                     <navigationItem key="navigationItem" id="jwr-xP-yTB"/>
                     <connections>
                         <outlet property="tableView" destination="fiS-hq-wFh" id="1MM-HW-qvG"/>
+                        <segue destination="khf-82-7Q9" kind="show" identifier="detailSegue" id="yUr-Sq-x4J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34" y="34"/>
+            <point key="canvasLocation" x="33" y="34"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7UQ-y1-wrp">
+            <objects>
+                <viewController id="khf-82-7Q9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8du-2c-5Hi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="i7O-rF-WR7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BDj-Hz-AaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="34"/>
         </scene>
     </scenes>
 </document>
